@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http:///www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<h1>Todolist</h1>
+<form method="post" action="/addTodo">
+  <input type="text" name="todo">
+  <input type="submit" value="Add Todo">
+</form>
+<button th:onclick="|location.href='@{/deleteTodoAll/}'|">전체삭제</button>
+<hr>
+<ul>
+    <li th:each="todo : ${todos}">
+        <span th:text="${todo.todo}"></span>
+        <button th:onclick="|location.href='@{/deleteTodo/{id}(id=${todo.id})}'|">삭제</button>
+
+    </li>
+</ul>
+<head>
+    <meta charset="UTF-8">
+    <title>Todo List</title>
+</head>
+<body>
+
+</body>
+</html>

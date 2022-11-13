@@ -1,0 +1,20 @@
+server:
+  port: 60
+
+
+spring:
+  # MySQL ?? ??
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/examplesdb?useSSL=false&useUnicode=true&serverTimezone=Asia/Seoul
+    username: root
+    password: root
+  # JPA ??
+  jpa:
+    hibernate:
+      ddl-auto: update # ?????? ??? ??
+    properties:
+      hibernate:
+        show_sql: true # ???? ?? ?? ??
+        format_sql: true # ???? ???? ??? ???? ?? ???
+    database-platform: org.hibernate.dialect.MySQL5Dialect
